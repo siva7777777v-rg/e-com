@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search, Filter, SlidersHorizontal, Grid, Sparkles } from 'lucide-react';
+import { Search, Sparkles, Gem } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { fetchProductsApi } from '../services/api';
 
@@ -45,29 +45,29 @@ const ProductsPage = () => {
   };
 
   return (
-    <div className="container" style={{ paddingTop: '2rem' }}>
+    <div className="container" style={{ paddingTop: '2.5rem' }}>
       
       {/* Header */}
-      <div style={{ marginBottom: '2rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#818cf8', marginBottom: '0.25rem' }}>
-          <Sparkles size={18} />
-          <span style={{ fontSize: '0.85rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-            Comprehensive Product Catalog
+      <div style={{ marginBottom: '2.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fbbf24', marginBottom: '0.35rem' }}>
+          <Gem size={20} color="#fbbf24" />
+          <span style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
+            LUMINA VAULT COLLECTION
           </span>
         </div>
-        <h1 style={{ fontSize: '2.5rem', color: '#fff' }}>Discover ShopEZ Collections</h1>
+        <h1 style={{ fontSize: '2.8rem', color: '#fff', fontFamily: "'Cinzel', serif" }}>Discover Lumina Catalog</h1>
       </div>
 
       {/* Filter & Controls Panel */}
-      <div className="glass-panel" style={{ padding: '1.5rem', marginBottom: '2.5rem' }}>
+      <div className="glass-panel" style={{ padding: '1.75rem', marginBottom: '2.5rem', borderColor: 'rgba(245, 158, 11, 0.25)' }}>
         <form onSubmit={handleSearchSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
           
           {/* Search Bar */}
           <div style={{ flex: '1 1 280px', position: 'relative' }}>
-            <Search size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+            <Search size={18} color="#fbbf24" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
             <input
               type="text"
-              placeholder="Search products by title, description, brand..."
+              placeholder="Search Lumina pieces by title, description, acoustic drivers..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="glass-input"
@@ -81,11 +81,11 @@ const ProductsPage = () => {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="glass-input"
-              style={{ background: 'rgba(9, 13, 22, 0.8)', cursor: 'pointer' }}
+              style={{ background: 'rgba(7, 9, 14, 0.9)', cursor: 'pointer', color: '#fff' }}
             >
               {categories.map((cat) => (
-                <option key={cat} value={cat} style={{ background: '#090d16', color: '#fff' }}>
-                  {cat === 'All' ? 'All Categories' : cat}
+                <option key={cat} value={cat} style={{ background: '#07090e', color: '#fff' }}>
+                  {cat === 'All' ? 'All Collections' : cat}
                 </option>
               ))}
             </select>
@@ -97,10 +97,10 @@ const ProductsPage = () => {
               value={gender}
               onChange={(e) => setGender(e.target.value)}
               className="glass-input"
-              style={{ background: 'rgba(9, 13, 22, 0.8)', cursor: 'pointer' }}
+              style={{ background: 'rgba(7, 9, 14, 0.9)', cursor: 'pointer', color: '#fff' }}
             >
               {genders.map((g) => (
-                <option key={g} value={g} style={{ background: '#090d16', color: '#fff' }}>
+                <option key={g} value={g} style={{ background: '#07090e', color: '#fff' }}>
                   {g === 'All' ? 'All Genders' : g}
                 </option>
               ))}
@@ -113,12 +113,12 @@ const ProductsPage = () => {
               value={sort}
               onChange={(e) => setSort(e.target.value)}
               className="glass-input"
-              style={{ background: 'rgba(9, 13, 22, 0.8)', cursor: 'pointer' }}
+              style={{ background: 'rgba(7, 9, 14, 0.9)', cursor: 'pointer', color: '#fff' }}
             >
-              <option value="newest" style={{ background: '#090d16', color: '#fff' }}>Newest Arrivals</option>
-              <option value="price-low" style={{ background: '#090d16', color: '#fff' }}>Price: Low to High</option>
-              <option value="price-high" style={{ background: '#090d16', color: '#fff' }}>Price: High to Low</option>
-              <option value="rating" style={{ background: '#090d16', color: '#fff' }}>Highest Rated</option>
+              <option value="newest" style={{ background: '#07090e', color: '#fff' }}>Newest Vault Additions</option>
+              <option value="price-low" style={{ background: '#07090e', color: '#fff' }}>Price: Low to High</option>
+              <option value="price-high" style={{ background: '#07090e', color: '#fff' }}>Price: High to Low</option>
+              <option value="rating" style={{ background: '#07090e', color: '#fff' }}>Highest Rated</option>
             </select>
           </div>
 
@@ -128,19 +128,19 @@ const ProductsPage = () => {
       {/* Results Header Info */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
         <span style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-          Showing <strong style={{ color: '#fff' }}>{products.length}</strong> products
+          Showing <strong style={{ color: '#fbbf24' }}>{products.length}</strong> Lumina pieces
         </span>
       </div>
 
       {/* Grid */}
       {loading ? (
         <div style={{ display: 'flex', justifyContent: 'center', padding: '5rem 0', color: 'var(--text-muted)' }}>
-          Loading products...
+          Retrieving Lumina items...
         </div>
       ) : products.length === 0 ? (
         <div className="glass-panel" style={{ padding: '4rem', textAlign: 'center' }}>
-          <h3 style={{ color: '#fff', marginBottom: '0.5rem' }}>No Products Found</h3>
-          <p style={{ color: 'var(--text-muted)' }}>Try adjusting your search criteria or category filters.</p>
+          <h3 style={{ color: '#fff', marginBottom: '0.5rem', fontFamily: "'Cinzel', serif" }}>No Products Found</h3>
+          <p style={{ color: 'var(--text-muted)' }}>Try adjusting your search query or category filters.</p>
         </div>
       ) : (
         <div style={{

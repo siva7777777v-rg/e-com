@@ -608,7 +608,7 @@ const seedData = async () => {
 
     // Create Default Users
     const adminUser = await User.create({
-      name: 'ShopEZ Admin',
+      name: 'Lumina Admin',
       email: 'admin@gmail.com',
       password: hashedAdminPassword,
       mobile: '+1 800-555-0199',

@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
       loadCart();
     } else {
       // Fallback to local storage for guests
-      const localCart = localStorage.getItem('shopez_guest_cart');
+      const localCart = localStorage.getItem('lumina_guest_cart') || localStorage.getItem('shopez_guest_cart');
       if (localCart) {
         try {
           setCartItems(JSON.parse(localCart));
@@ -39,7 +39,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  const addToCart = async (product, size = 'M', quantity = 1) => {
+  const addToCart = async (product, size = 'Standard', quantity = 1) => {
     if (user) {
       try {
         const { data } = await addToCartApi({ productId: product._id, size, quantity });
@@ -70,7 +70,7 @@ export const CartProvider = ({ children }) => {
             }
           ];
         }
-        localStorage.setItem('shopez_guest_cart', JSON.stringify(updated));
+        localStorage.setItem('lumina_guest_cart', JSON.stringify(updated));
         return updated;
       });
     }
@@ -87,7 +87,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCartItems((prev) => {
         const updated = prev.map(item => item._id === itemId ? { ...item, quantity } : item).filter(item => item.quantity > 0);
-        localStorage.setItem('shopez_guest_cart', JSON.stringify(updated));
+        localStorage.setItem('lumina_guest_cart', JSON.stringify(updated));
         return updated;
       });
     }
@@ -104,7 +104,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCartItems((prev) => {
         const updated = prev.filter(item => item._id !== itemId);
-        localStorage.setItem('shopez_guest_cart', JSON.stringify(updated));
+        localStorage.setItem('lumina_guest_cart', JSON.stringify(updated));
         return updated;
       });
     }
@@ -120,6 +120,7 @@ export const CartProvider = ({ children }) => {
       }
     } else {
       setCartItems([]);
+      localStorage.removeItem('lumina_guest_cart');
       localStorage.removeItem('shopez_guest_cart');
     }
   };

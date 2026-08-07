@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Lock, Mail, User, ShieldAlert, KeyRound, Sparkles, ArrowRight } from 'lucide-react';
+import { Lock, Mail, User, ShieldAlert, KeyRound, ArrowRight, Gem } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const AuthPage = () => {
@@ -52,22 +52,29 @@ const AuthPage = () => {
   return (
     <div className="container" style={{ paddingTop: '4rem', paddingBottom: '4rem', display: 'flex', justifyContent: 'center' }}>
       
-      <div className="glass-panel" style={{ width: '100%', maxWidth: '480px', padding: '2.5rem' }}>
+      <div className="glass-panel" style={{ width: '100%', maxWidth: '490px', padding: '2.75rem', borderColor: 'rgba(245, 158, 11, 0.3)' }}>
         
+        <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '50px', height: '50px', borderRadius: '14px', background: 'linear-gradient(135deg, #f59e0b 0%, #10b981 100%)', marginBottom: '0.75rem' }}>
+            <Gem size={26} color="#07090e" />
+          </div>
+          <h2 style={{ fontSize: '2rem', color: '#fff', fontFamily: "'Cinzel', serif" }}>LUMINA Portal</h2>
+        </div>
+
         {/* Mentor Evaluation Helper Box */}
         <div style={{
-          background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%)',
-          border: '1px solid rgba(236, 72, 153, 0.3)',
+          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%)',
+          border: '1px solid rgba(245, 158, 11, 0.35)',
           borderRadius: 'var(--radius-md)',
           padding: '1rem',
           marginBottom: '1.75rem',
           textAlign: 'center'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', color: '#f472b6', fontWeight: '700', fontSize: '0.85rem', marginBottom: '0.4rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', color: '#fbbf24', fontWeight: '800', fontSize: '0.85rem', marginBottom: '0.4rem', letterSpacing: '0.05em' }}>
             <ShieldAlert size={16} /> MENTOR REVIEW QUICK LOGIN
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginBottom: '0.75rem' }}>
-            Click below to auto-fill pre-configured admin credentials:
+            Click below to auto-fill pre-configured Lumina admin suite credentials:
           </p>
           <button
             type="button"
@@ -75,12 +82,12 @@ const AuthPage = () => {
             className="glass-btn"
             style={{
               width: '100%',
-              padding: '0.5rem',
+              padding: '0.55rem',
               fontSize: '0.85rem',
-              background: 'rgba(236, 72, 153, 0.2)',
-              color: '#fff',
-              borderColor: 'rgba(236, 72, 153, 0.4)',
-              fontWeight: '700'
+              background: 'rgba(245, 158, 11, 0.25)',
+              color: '#fffbeb',
+              borderColor: 'rgba(245, 158, 11, 0.5)',
+              fontWeight: '800'
             }}
           >
             <KeyRound size={15} /> Fill Admin: admin@gmail.com / admin123
@@ -96,10 +103,11 @@ const AuthPage = () => {
               padding: '0.75rem',
               background: 'transparent',
               border: 'none',
-              borderBottom: isLogin ? '2px solid var(--primary)' : '2px solid transparent',
-              color: isLogin ? '#fff' : 'var(--text-muted)',
-              fontWeight: '700',
-              fontSize: '1rem',
+              borderBottom: isLogin ? '2px solid #f59e0b' : '2px solid transparent',
+              color: isLogin ? '#fbbf24' : 'var(--text-muted)',
+              fontWeight: '800',
+              fontSize: '1.05rem',
+              fontFamily: "'Cinzel', serif",
               cursor: 'pointer'
             }}
           >
@@ -113,10 +121,11 @@ const AuthPage = () => {
               padding: '0.75rem',
               background: 'transparent',
               border: 'none',
-              borderBottom: !isLogin ? '2px solid var(--primary)' : '2px solid transparent',
-              color: !isLogin ? '#fff' : 'var(--text-muted)',
-              fontWeight: '700',
-              fontSize: '1rem',
+              borderBottom: !isLogin ? '2px solid #f59e0b' : '2px solid transparent',
+              color: !isLogin ? '#fbbf24' : 'var(--text-muted)',
+              fontWeight: '800',
+              fontSize: '1.05rem',
+              fontFamily: "'Cinzel', serif",
               cursor: 'pointer'
             }}
           >
@@ -134,13 +143,13 @@ const AuthPage = () => {
           
           {!isLogin && (
             <div>
-              <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Full Name</label>
+              <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Patron Full Name</label>
               <div style={{ position: 'relative' }}>
-                <User size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+                <User size={18} color="#fbbf24" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Alex Smith"
+                  placeholder="e.g. Victoria Vance"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="glass-input"
@@ -153,11 +162,11 @@ const AuthPage = () => {
           <div>
             <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Email Address</label>
             <div style={{ position: 'relative' }}>
-              <Mail size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+              <Mail size={18} color="#fbbf24" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="email"
                 required
-                placeholder="admin@gmail.com or user@example.com"
+                placeholder="admin@gmail.com or patron@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="glass-input"
@@ -169,7 +178,7 @@ const AuthPage = () => {
           <div>
             <label style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Password</label>
             <div style={{ position: 'relative' }}>
-              <Lock size={18} color="var(--text-muted)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+              <Lock size={18} color="#fbbf24" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="password"
                 required
@@ -186,9 +195,9 @@ const AuthPage = () => {
             type="submit"
             disabled={submitting}
             className="glass-btn btn-primary"
-            style={{ width: '100%', padding: '0.85rem', fontSize: '1rem', fontWeight: '700', marginTop: '0.5rem' }}
+            style={{ width: '100%', padding: '0.85rem', fontSize: '1rem', fontWeight: '800', marginTop: '0.5rem' }}
           >
-            {submitting ? 'Processing...' : isLogin ? 'Access Account' : 'Create Account'} <ArrowRight size={18} />
+            {submitting ? 'Authenticating...' : isLogin ? 'Access Lumina Account' : 'Create Lumina Account'} <ArrowRight size={18} color="#07090e" />
           </button>
 
         </form>

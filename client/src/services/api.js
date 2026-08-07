@@ -7,11 +7,9 @@ const API = axios.create({
   baseURL: API_BASE.endsWith('/api') ? API_BASE : `${API_BASE.replace(/\/$/, '')}/api`,
 });
 
-
-
 // Request interceptor to attach JWT token
 API.interceptors.request.use((config) => {
-  const token = localStorage.getItem('shopez_token');
+  const token = localStorage.getItem('lumina_token') || localStorage.getItem('shopez_token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

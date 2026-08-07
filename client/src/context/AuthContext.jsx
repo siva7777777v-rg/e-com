@@ -9,13 +9,14 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const token = localStorage.getItem('shopez_token');
+      const token = localStorage.getItem('lumina_token') || localStorage.getItem('shopez_token');
       if (token) {
         try {
           const { data } = await getProfileApi();
           setUser({ ...data, token });
         } catch (error) {
           console.error('Session expired:', error.message);
+          localStorage.removeItem('lumina_token');
           localStorage.removeItem('shopez_token');
           setUser(null);
         }
@@ -28,6 +29,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     const { data } = await loginApi(credentials);
+    localStorage.setItem('lumina_token', data.token);
     localStorage.setItem('shopez_token', data.token);
     setUser(data);
     return data;
@@ -35,12 +37,14 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     const { data } = await registerApi(userData);
+    localStorage.setItem('lumina_token', data.token);
     localStorage.setItem('shopez_token', data.token);
     setUser(data);
     return data;
   };
 
   const logout = () => {
+    localStorage.removeItem('lumina_token');
     localStorage.removeItem('shopez_token');
     setUser(null);
   };

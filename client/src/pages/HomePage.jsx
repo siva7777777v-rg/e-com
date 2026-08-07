@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ShieldCheck, Truck, RefreshCw, Zap, ArrowRight, Star, Flame, Award, Heart, CheckCircle2, Send, ShoppingBag } from 'lucide-react';
+import { Sparkles, ShieldCheck, Truck, RefreshCw, Zap, ArrowRight, Star, Flame, Award, Heart, CheckCircle2, Send, Crown, Gem } from 'lucide-react';
 import HeroBanner from '../components/HeroBanner';
 import ProductCard from '../components/ProductCard';
 import { fetchProductsApi } from '../services/api';
@@ -9,61 +9,61 @@ const categoriesList = [
   {
     name: 'Electronics',
     icon: '🎧',
-    count: '10 Products',
-    desc: 'High-fidelity audio, smartwatches & high-tech studio gear.',
-    img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80',
-    color: 'linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(79, 70, 229, 0.4) 100%)',
+    count: '10 Pieces',
+    desc: 'Audiophile acoustics, smart chronographs & pro studio gear.',
+    img: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80',
+    color: 'linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(180, 83, 9, 0.4) 100%)',
   },
   {
     name: 'Fashion',
     icon: '🧥',
-    count: '10 Products',
-    desc: 'Urban windbreakers, silk dresses & handcrafted leather apparel.',
-    img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop&q=80',
-    color: 'linear-gradient(135deg, rgba(236, 72, 153, 0.25) 0%, rgba(190, 24, 93, 0.4) 100%)',
+    count: '10 Pieces',
+    desc: 'Architectural outerwear, silk dresses & bespoke leather.',
+    img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80',
+    color: 'linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(4, 120, 87, 0.4) 100%)',
   },
   {
     name: 'Footwear',
     icon: '👟',
-    count: '10 Products',
-    desc: 'Performance running sneakers, retro kicks & Italian boots.',
-    img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80',
+    count: '10 Pieces',
+    desc: 'Luxury performance runners, limited kicks & Italian boots.',
+    img: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&auto=format&fit=crop&q=80',
     color: 'linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(14, 116, 144, 0.4) 100%)',
   },
   {
     name: 'Furniture',
     icon: '🪑',
-    count: '10 Products',
-    desc: 'Cyber ergonomic chairs, standing desks & Scandinavian oak decor.',
-    img: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&auto=format&fit=crop&q=80',
-    color: 'linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(180, 83, 9, 0.4) 100%)',
+    count: '10 Pieces',
+    desc: 'Ergonomic lounge seats, oak desks & minimalist decor.',
+    img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&auto=format&fit=crop&q=80',
+    color: 'linear-gradient(135deg, rgba(251, 191, 36, 0.25) 0%, rgba(217, 119, 6, 0.4) 100%)',
   },
 ];
 
 const testimonials = [
   {
     id: 1,
-    name: 'Sophia Martinez',
-    role: 'Verified Buyer',
-    comment: 'ShopEZ provided the smoothest online shopping experience! My Aura headphones arrived in less than 24 hours with pristine glassmorphic packaging.',
+    name: 'Victoria Vance',
+    role: 'Verified VIP Member',
+    comment: 'LUMINA provides an unparalleled online shopping experience! The Aura Acoustics arrived in handcrafted gold foil packaging within 24 hours.',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 2,
-    name: 'David Chen',
-    role: 'Tech Enthusiast',
-    comment: 'The 1-click Shop Now feature is brilliant. I ordered the Cyberpunk Smart Watch and tracked delivery seamlessly from my user profile page.',
+    name: 'Alexander Sterling',
+    role: 'Product Designer',
+    comment: 'The 1-click checkout and refined amber obsidian aesthetic are incredible. Tracking my Chronos Imperial watch was seamless.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
   },
   {
     id: 3,
-    name: 'Emma Watson',
-    role: 'Interior Designer',
-    comment: 'Remarkable quality for the Vanguard Ergonomic Chair. Clean modern UI, fast API checkout, and top-notch customer support!',
+    name: 'Elena Rostova',
+    role: 'Architectural Lead',
+    comment: 'Exquisite build quality for the Scandi Oak Lounge. Stunning UI design, instantaneous API response, and 5-star concierge service!',
     rating: 5,
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
   },
 ];
 
@@ -99,7 +99,7 @@ const HomePage = () => {
     if (emailInput.trim()) {
       setSubscribed(true);
       setEmailInput('');
-      setTimeout(() => setSubscribed(false), 4000);
+      setTimeout(() => setSubscribed(false), 5000);
     }
   };
 
@@ -113,51 +113,51 @@ const HomePage = () => {
 
       {/* 2. Value Propositions Bar */}
       <div className="glass-panel" style={{
-        padding: '2rem',
-        marginBottom: '4rem',
+        padding: '2.25rem',
+        marginBottom: '4.5rem',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
         gap: '2rem',
-        background: 'linear-gradient(135deg, rgba(18, 24, 38, 0.8) 0%, rgba(9, 13, 22, 0.9) 100%)',
-        borderColor: 'rgba(255, 255, 255, 0.15)'
+        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(7, 9, 14, 0.95) 100%)',
+        borderColor: 'rgba(245, 158, 11, 0.25)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(99, 102, 241, 0.15)', color: '#818cf8', boxShadow: '0 0 15px rgba(99,102,241,0.2)' }}>
+          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24', boxShadow: '0 0 18px rgba(245,158,11,0.25)' }}>
             <Truck size={28} />
           </div>
           <div>
-            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem' }}>Express Delivery</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Free shipping on all orders over $50</p>
+            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem', fontFamily: "'Cinzel', serif" }}>Express Delivery</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Complimentary express shipping on $150+</p>
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(236, 72, 153, 0.15)', color: '#f472b6', boxShadow: '0 0 15px rgba(236,72,153,0.2)' }}>
+          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(16, 185, 129, 0.15)', color: '#6ee7b7', boxShadow: '0 0 18px rgba(16,185,129,0.25)' }}>
             <ShieldCheck size={28} />
           </div>
           <div>
-            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem' }}>256-Bit SSL Security</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Encrypted COD, Card & UPI checkout</p>
+            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem', fontFamily: "'Cinzel', serif" }}>256-Bit SSL Shield</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Encrypted COD, Card & Digital Vault</p>
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(6, 182, 212, 0.15)', color: '#22d3ee', boxShadow: '0 0 15px rgba(6,182,212,0.2)' }}>
+          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(6, 182, 212, 0.15)', color: '#22d3ee', boxShadow: '0 0 18px rgba(6,182,212,0.25)' }}>
             <RefreshCw size={28} />
           </div>
           <div>
-            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem' }}>30-Day Free Returns</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Hassle-free money-back guarantee</p>
+            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem', fontFamily: "'Cinzel', serif" }}>30-Day Concierge Exchange</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Seamless money-back guarantee</p>
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24', boxShadow: '0 0 15px rgba(245,158,11,0.2)' }}>
+          <div style={{ padding: '0.85rem', borderRadius: '16px', background: 'rgba(251, 191, 36, 0.15)', color: '#fbbf24', boxShadow: '0 0 18px rgba(251,191,36,0.25)' }}>
             <Zap size={28} />
           </div>
           <div>
-            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem' }}>1-Click "Shop Now"</h4>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Instant checkout flow to order page</p>
+            <h4 style={{ fontSize: '1.05rem', color: '#fff', marginBottom: '0.2rem', fontFamily: "'Cinzel', serif" }}>1-Click Instant Order</h4>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Instant checkout flow to confirmation</p>
           </div>
         </div>
       </div>
@@ -165,15 +165,15 @@ const HomePage = () => {
       {/* 3. Category Grid Showcase */}
       <div style={{ marginBottom: '4.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#818cf8', marginBottom: '0.4rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#fbbf24', marginBottom: '0.4rem' }}>
             <Sparkles size={18} />
-            <span style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-              BROWSE BY CATEGORY
+            <span style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
+              CURATED COLLECTIONS
             </span>
           </div>
-          <h2 style={{ fontSize: '2.4rem', color: '#fff', fontWeight: '900' }}>Explore Our Curated Collections</h2>
+          <h2 style={{ fontSize: '2.5rem', color: '#fff', fontWeight: '900', fontFamily: "'Cinzel', serif" }}>Explore Luxury Categories</h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.5rem' }}>
-            Discover 40 premium products carefully designed for your modern lifestyle.
+            Discover handpicked modern essentials engineered for refined living.
           </p>
         </div>
 
@@ -189,14 +189,15 @@ const HomePage = () => {
               className="glass-card animate-fade-in"
               style={{
                 position: 'relative',
-                height: '280px',
+                height: '290px',
                 borderRadius: 'var(--radius-lg)',
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
                 padding: '1.75rem',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                borderTop: '2px solid rgba(245, 158, 11, 0.4)'
               }}
             >
               {/* Card Image */}
@@ -209,8 +210,8 @@ const HomePage = () => {
                 backgroundImage: `url(${cat.img})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                filter: 'brightness(0.45)',
-                transition: 'transform 0.5s ease'
+                filter: 'brightness(0.4)',
+                transition: 'transform 0.6s ease'
               }}
               onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
               onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
@@ -223,19 +224,19 @@ const HomePage = () => {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                background: 'linear-gradient(0deg, rgba(9, 13, 22, 0.95) 0%, rgba(9, 13, 22, 0.4) 60%, transparent 100%)'
+                background: 'linear-gradient(0deg, rgba(7, 9, 14, 0.95) 0%, rgba(7, 9, 14, 0.4) 60%, transparent 100%)'
               }} />
 
               {/* Content Overlay */}
               <div style={{ position: 'relative', zIndex: 5 }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                   <span style={{ fontSize: '2rem' }}>{cat.icon}</span>
-                  <span className="badge badge-primary" style={{ fontSize: '0.75rem' }}>
+                  <span className="badge badge-primary" style={{ fontSize: '0.72rem' }}>
                     {cat.count}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: '800', marginBottom: '0.4rem' }}>
+                <h3 style={{ fontSize: '1.45rem', color: '#fff', fontWeight: '800', marginBottom: '0.4rem', fontFamily: "'Cinzel', serif" }}>
                   {cat.name}
                 </h3>
                 
@@ -243,8 +244,8 @@ const HomePage = () => {
                   {cat.desc}
                 </p>
 
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#818cf8', fontWeight: '700', fontSize: '0.85rem' }}>
-                  Explore Collection <ArrowRight size={15} />
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#fbbf24', fontWeight: '800', fontSize: '0.85rem' }}>
+                  View Collection <ArrowRight size={15} />
                 </div>
               </div>
             </Link>
@@ -257,20 +258,20 @@ const HomePage = () => {
         <div style={{ marginBottom: '4.5rem' }}>
           <div className="glass-panel" style={{
             padding: '2.5rem',
-            background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.12) 0%, rgba(99, 102, 241, 0.15) 100%)',
-            borderColor: 'rgba(236, 72, 153, 0.3)'
+            background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(16, 185, 129, 0.12) 100%)',
+            borderColor: 'rgba(245, 158, 11, 0.35)'
           }}>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '2rem' }}>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#f472b6', marginBottom: '0.25rem' }}>
-                  <Flame size={20} color="#ec4899" />
-                  <span style={{ fontSize: '0.85rem', fontWeight: '800', letterSpacing: '0.12em' }}>LIMITED TIME OFFER</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fbbf24', marginBottom: '0.25rem' }}>
+                  <Crown size={20} color="#fbbf24" />
+                  <span style={{ fontSize: '0.85rem', fontWeight: '800', letterSpacing: '0.12em' }}>PRIVATE DROP OFFERS</span>
                 </div>
-                <h2 style={{ fontSize: '2.2rem', color: '#fff', fontWeight: '900' }}>Today's Top Flash Discounts</h2>
+                <h2 style={{ fontSize: '2.3rem', color: '#fff', fontWeight: '900', fontFamily: "'Cinzel', serif" }}>Limited Spotlight Discounts</h2>
               </div>
 
-              <Link to="/products" className="glass-btn btn-accent" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>
-                View All Deals <ArrowRight size={16} />
+              <Link to="/products" className="glass-btn btn-primary" style={{ padding: '0.75rem 1.75rem', fontSize: '0.9rem', fontWeight: '800' }}>
+                View All Drops <ArrowRight size={16} />
               </Link>
             </div>
 
@@ -291,13 +292,13 @@ const HomePage = () => {
       <div style={{ marginBottom: '4.5rem' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', marginBottom: '2rem' }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#818cf8', marginBottom: '0.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#10b981', marginBottom: '0.25rem' }}>
               <Award size={18} />
-              <span style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                LIVE STORE CATALOG
+              <span style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                LIVE VAULT CATALOG
               </span>
             </div>
-            <h2 style={{ fontSize: '2.2rem', color: '#fff', fontWeight: '900' }}>Featured E-Commerce Products</h2>
+            <h2 style={{ fontSize: '2.3rem', color: '#fff', fontWeight: '900', fontFamily: "'Cinzel', serif" }}>Featured Lumina Showcase</h2>
           </div>
 
           {/* Filter Pills */}
@@ -310,10 +311,11 @@ const HomePage = () => {
                 style={{
                   padding: '0.55rem 1.25rem',
                   fontSize: '0.9rem',
-                  background: selectedCategory === cat ? 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)' : 'rgba(255, 255, 255, 0.05)',
-                  color: selectedCategory === cat ? '#fff' : 'var(--text-muted)',
-                  borderColor: selectedCategory === cat ? 'var(--primary)' : 'var(--border-glass)',
-                  boxShadow: selectedCategory === cat ? '0 0 15px var(--primary-glow)' : 'none'
+                  background: selectedCategory === cat ? 'linear-gradient(135deg, #f59e0b 0%, #b45309 100%)' : 'rgba(255, 255, 255, 0.05)',
+                  color: selectedCategory === cat ? '#07090e' : 'var(--text-muted)',
+                  fontWeight: selectedCategory === cat ? '800' : '500',
+                  borderColor: selectedCategory === cat ? '#f59e0b' : 'var(--border-glass)',
+                  boxShadow: selectedCategory === cat ? '0 0 16px var(--primary-glow)' : 'none'
                 }}
               >
                 {cat}
@@ -324,7 +326,7 @@ const HomePage = () => {
 
         {loading ? (
           <div style={{ display: 'flex', justifyContent: 'center', padding: '5rem 0', color: 'var(--text-muted)' }}>
-            Loading products...
+            Loading Lumina vault pieces...
           </div>
         ) : (
           <div style={{
@@ -339,8 +341,8 @@ const HomePage = () => {
         )}
 
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <Link to="/products" className="glass-btn btn-secondary" style={{ padding: '0.85rem 2.5rem', fontSize: '1rem', fontWeight: '700' }}>
-            View Full 40+ Product Catalog <ArrowRight size={18} />
+          <Link to="/products" className="glass-btn btn-secondary" style={{ padding: '0.9rem 2.5rem', fontSize: '1rem', fontWeight: '800' }}>
+            Browse Complete Lumina Catalog <ArrowRight size={18} />
           </Link>
         </div>
       </div>
@@ -348,11 +350,11 @@ const HomePage = () => {
       {/* 6. Customer Testimonials Section */}
       <div style={{ marginBottom: '4.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#ec4899', marginBottom: '0.4rem' }}>
-            <Heart size={18} color="#ec4899" fill="#ec4899" />
-            <span style={{ fontSize: '0.85rem', fontWeight: '800', letterSpacing: '0.1em' }}>HAPPY SHOPPERS</span>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#fbbf24', marginBottom: '0.4rem' }}>
+            <Gem size={18} color="#fbbf24" />
+            <span style={{ fontSize: '0.85rem', fontWeight: '800', letterSpacing: '0.12em' }}>VIP REVIEWS</span>
           </div>
-          <h2 style={{ fontSize: '2.2rem', color: '#fff', fontWeight: '900' }}>What Our Customers Say</h2>
+          <h2 style={{ fontSize: '2.3rem', color: '#fff', fontWeight: '900', fontFamily: "'Cinzel', serif" }}>Patron Testimonials</h2>
         </div>
 
         <div style={{
@@ -361,23 +363,23 @@ const HomePage = () => {
           gap: '1.75rem'
         }}>
           {testimonials.map((t) => (
-            <div key={t.id} className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div key={t.id} className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderTop: '2px solid rgba(245, 158, 11, 0.3)' }}>
               <div>
-                <div style={{ display: 'flex', gap: '0.25rem', color: '#fcd34d', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', gap: '0.25rem', color: '#fbbf24', marginBottom: '1rem' }}>
                   {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="#fcd34d" color="#fcd34d" />
+                    <Star key={i} size={16} fill="#fbbf24" color="#fbbf24" />
                   ))}
                 </div>
-                <p style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', italic: 'true' }}>
+                <p style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem', fontStyle: 'italic' }}>
                   "{t.comment}"
                 </p>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', borderTop: '1px solid var(--border-glass)', paddingTop: '1rem' }}>
-                <img src={t.avatar} alt={t.name} style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover' }} />
+                <img src={t.avatar} alt={t.name} style={{ width: '46px', height: '46px', borderRadius: '50%', objectFit: 'cover', border: '1px solid #f59e0b' }} />
                 <div>
-                  <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: '700' }}>{t.name}</h4>
-                  <span style={{ fontSize: '0.75rem', color: 'var(--accent-emerald)', display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
+                  <h4 style={{ color: '#fff', fontSize: '0.95rem', fontWeight: '700', fontFamily: "'Cinzel', serif" }}>{t.name}</h4>
+                  <span style={{ fontSize: '0.75rem', color: '#10b981', display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
                     <CheckCircle2 size={12} /> {t.role}
                   </span>
                 </div>
@@ -391,23 +393,23 @@ const HomePage = () => {
       <div className="glass-panel" style={{
         padding: '3.5rem 2.5rem',
         textAlign: 'center',
-        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)',
-        borderColor: 'rgba(99, 102, 241, 0.35)',
+        background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(16, 185, 129, 0.18) 100%)',
+        borderColor: 'rgba(245, 158, 11, 0.4)',
         position: 'relative',
         overflow: 'hidden'
       }}>
-        <div style={{ maxWidth: '600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-          <span className="badge badge-primary" style={{ marginBottom: '1rem' }}>EXCLUSIVE MEMBER DISCOUNTS</span>
-          <h2 style={{ fontSize: '2.2rem', color: '#fff', fontWeight: '900', marginBottom: '0.75rem' }}>
-            Subscribe & Save 15% On Your Next Order
+        <div style={{ maxWidth: '620px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+          <span className="badge badge-primary" style={{ marginBottom: '1rem' }}>INSIDER ACCESS</span>
+          <h2 style={{ fontSize: '2.4rem', color: '#fff', fontWeight: '900', marginBottom: '0.75rem', fontFamily: "'Cinzel', serif" }}>
+            Subscribe & Enjoy 15% Off Your Order
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '2rem' }}>
-            Join our ShopEZ insider list to get instant promo codes, flash sale alerts, and VIP new product drops directly in your inbox.
+            Join the Lumina VIP circle for instant promo vouchers, secret vault releases, and private drop invites directly in your inbox.
           </p>
 
           {subscribed ? (
-            <div className="badge badge-success animate-fade-in" style={{ padding: '0.85rem 1.5rem', fontSize: '0.95rem', margin: '0 auto' }}>
-              <CheckCircle2 size={18} /> Thank you for subscribing! Your 15% discount code is <strong>SHOPEZ15</strong>
+            <div className="badge badge-success animate-fade-in" style={{ padding: '0.85rem 1.5rem', fontSize: '0.95rem', margin: '0 auto', background: 'rgba(16, 185, 129, 0.25)', color: '#6ee7b7' }}>
+              <CheckCircle2 size={18} /> Thank you for joining! Your 15% promo voucher code is <strong style={{ color: '#fff', marginLeft: '0.3rem' }}>LUMINA2026</strong>
             </div>
           ) : (
             <form onSubmit={handleSubscribe} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
@@ -420,8 +422,8 @@ const HomePage = () => {
                 className="glass-input"
                 style={{ flex: '1 1 280px', padding: '0.85rem 1.25rem' }}
               />
-              <button type="submit" className="glass-btn btn-primary" style={{ padding: '0.85rem 1.75rem', fontWeight: '700' }}>
-                Subscribe <Send size={16} />
+              <button type="submit" className="glass-btn btn-primary" style={{ padding: '0.85rem 1.75rem', fontWeight: '800' }}>
+                Join VIP Circle <Send size={16} color="#07090e" />
               </button>
             </form>
           )}
