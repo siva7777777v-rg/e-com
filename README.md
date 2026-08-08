@@ -10,6 +10,7 @@
 > - 🌐 **Live Vercel Frontend**: [https://e-com-cyan-gamma.vercel.app/](https://e-com-cyan-gamma.vercel.app/)
 > - ⚡ **Live Render Backend API**: [https://e-com-server-xain.onrender.com](https://e-com-server-xain.onrender.com)
 > - 📦 **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
+> - 🎥 **Project Video**: [Google Drive Folder](https://drive.google.com/drive/folders/15OkkJrmNhpTcmPB0hSifUTqJ_jHjAtX3?usp=sharing)
 > - 🔑 **Pre-configured Admin Account**:
 >   - **Account Email**: `admin@gmail.com`
 >   - **Password**: `admin123`
@@ -241,6 +242,7 @@ npm run dev
 - **Live Vercel Frontend**: [https://e-com-cyan-gamma.vercel.app/](https://e-com-cyan-gamma.vercel.app/)
 - **Live Render Backend API**: [https://e-com-server-xain.onrender.com](https://e-com-server-xain.onrender.com)
 - **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
+- **Project Video**: [Google Drive Folder](https://drive.google.com/drive/folders/15OkkJrmNhpTcmPB0hSifUTqJ_jHjAtX3?usp=sharing)
 - **Admin Email**: `admin@gmail.com`
 - **Admin Password**: `admin123`
 
