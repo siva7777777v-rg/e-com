@@ -11,6 +11,7 @@
 > - ⚡ **Live Render Backend API**: [https://e-com-server-xain.onrender.com](https://e-com-server-xain.onrender.com)
 > - 📦 **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
 > - 🎥 **Project Video**: [Google Drive Folder](https://drive.google.com/drive/folders/15OkkJrmNhpTcmPB0hSifUTqJ_jHjAtX3?usp=sharing)
+> - 📄 **Project Documentation**: [Google Drive Folder](https://drive.google.com/drive/folders/1F9opAm4vu4nvSzHU9jGPpcvPUk9ewmaq?usp=sharing)
 > - 🔑 **Pre-configured Admin Account**:
 >   - **Account Email**: `admin@gmail.com`
 >   - **Password**: `admin123`
@@ -243,6 +244,7 @@ npm run dev
 - **Live Render Backend API**: [https://e-com-server-xain.onrender.com](https://e-com-server-xain.onrender.com)
 - **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
 - **Project Video**: [Google Drive Folder](https://drive.google.com/drive/folders/15OkkJrmNhpTcmPB0hSifUTqJ_jHjAtX3?usp=sharing)
+- **Project Documentation**: [Google Drive Folder](https://drive.google.com/drive/folders/1F9opAm4vu4nvSzHU9jGPpcvPUk9ewmaq?usp=sharing)
 - **Admin Email**: `admin@gmail.com`
 - **Admin Password**: `admin123`
 
