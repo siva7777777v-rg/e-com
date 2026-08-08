@@ -7,7 +7,8 @@
 ## DEMO AND GITHUB REPOSITORY LINKS
 
 > [!IMPORTANT]
-> - ⚡ **Live Render Backend API**: [https://shopez-backend-2938.onrender.com](https://shopez-backend-2938.onrender.com)
+> - 🌐 **Live Vercel Frontend**: [https://e-com-cyan-gamma.vercel.app/](https://e-com-cyan-gamma.vercel.app/)
+> - ⚡ **Live Render Backend API**: [https://e-com-server-xain.onrender.com](https://e-com-server-xain.onrender.com)
 > - 📦 **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
 > - 🔑 **Pre-configured Admin Account**:
 >   - **Account Email**: `admin@gmail.com`
@@ -237,8 +238,9 @@ npm run dev
 
 ## DEMO & EVALUATION LINKS SUMMARY
 
+- **Live Vercel Frontend**: [https://e-com-cyan-gamma.vercel.app/](https://e-com-cyan-gamma.vercel.app/)
+- **Live Render Backend API**: [https://e-com-server-xain.onrender.com](https://e-com-server-xain.onrender.com)
 - **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
-- **Live Render Backend API**: [https://shopez-backend-2938.onrender.com](https://shopez-backend-2938.onrender.com)
 - **Admin Email**: `admin@gmail.com`
 - **Admin Password**: `admin123`
 
