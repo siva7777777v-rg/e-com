@@ -8,7 +8,7 @@
 
 > [!IMPORTANT]
 > - ⚡ **Live Render Backend API**: [https://shopez-backend-2938.onrender.com](https://shopez-backend-2938.onrender.com)
-> - 📦 **GitHub Repository**: [https://github.com/livin-renith/shopez-ecommerce](https://github.com/livin-renith/shopez-ecommerce)
+> - 📦 **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
 > - 🔑 **Pre-configured Admin Account**:
 >   - **Account Email**: `admin@gmail.com`
 >   - **Password**: `admin123`
@@ -237,7 +237,7 @@ npm run dev
 
 ## DEMO & EVALUATION LINKS SUMMARY
 
-- **GitHub Repository**: [https://github.com/livin-renith/shopez-ecommerce](https://github.com/livin-renith/shopez-ecommerce)
+- **GitHub Repository**: [https://github.com/siva7777777v-rg/e-com](https://github.com/siva7777777v-rg/e-com)
 - **Live Render Backend API**: [https://shopez-backend-2938.onrender.com](https://shopez-backend-2938.onrender.com)
 - **Admin Email**: `admin@gmail.com`
 - **Admin Password**: `admin123`
